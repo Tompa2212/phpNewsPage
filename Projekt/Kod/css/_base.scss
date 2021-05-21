@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+
+:root {
+  --color-primary: rgb(2, 25, 48);
+  --color-primary2: rgb(6, 71, 137);
+  --color-secondary: rgb(240, 82, 49);
+  --boxShadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --white: #fff;
+
+  --transition: all 0.3s linear;
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  max-width: 123rem;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+h1 {
+  margin-bottom: 2rem;
+}
+
+body::-webkit-scrollbar {
+  width: 1.4rem; /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--color-primary); /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(216, 216, 216); /* color of the scroll thumb */
+  border-radius: 2rem; /* roundness of the scroll thumb */
+  border: 0.3rem solid var(--color-primary); /* creates padding around scroll thumb */
+}

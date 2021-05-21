@@ -1,0 +1,128 @@
+.form-cont {
+  width: 80%;
+  margin: 0 auto;
+
+  h1 {
+    text-align: center;
+  }
+
+  .form {
+    padding: 3rem 0;
+
+    .form-control {
+      position: relative;
+      padding-bottom: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .inputs {
+      width: 70%;
+      font-family: inherit;
+      font-size: inherit;
+      padding: 1rem;
+      border: 2px solid var(--color-primary);
+      border-radius: 0.4rem;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+    .img-upload {
+      background: var(--color-primary);
+      color: var(--white);
+      border-radius: 0.5rem;
+      display: inline-block;
+      padding: 0.6rem 1.5rem;
+      cursor: pointer;
+    }
+
+    select {
+      cursor: pointer;
+      width: 20rem;
+      padding: 1rem;
+      background: var(--color-primary);
+      color: var(--white);
+      font-family: inherit;
+      font-size: inherit;
+      border-radius: 0.4rem;
+
+      option {
+        padding: 0.5rem;
+      }
+    }
+
+    &__btn {
+      cursor: pointer;
+      background: var(--color-primary);
+      color: var(--white);
+      font-size: inherit;
+      font-family: inherit;
+      border: none;
+      padding: 1rem 3rem;
+      border-radius: 0.4rem;
+
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+    }
+  }
+}
+.administration {
+  padding: 3rem;
+  margin-bottom: 2rem;
+  border: 1px solid lightgray !important;
+}
+
+@media screen and (max-width: 88rem) {
+  .form-cont {
+    width: 100%;
+
+    .form {
+      .form-control {
+        .inputs {
+          width: 100%;
+          max-width: 70rem;
+        }
+      }
+    }
+  }
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+//FORM VALIDATION
+.form-control.success input,
+.form-control.success textarea {
+  border-color: #2ecc71 !important;
+}
+.form-control.error input,
+.form-control.error textarea {
+  border-color: #e74c3c !important;
+}
+
+.form-control small {
+  visibility: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.form-control.error small {
+  visibility: visible;
+  color: #e74c3c;
+}
+
+.register {
+  color: var(--color-primary);
+  text-decoration: none;
+}

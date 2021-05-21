@@ -1,0 +1,457 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+:root {
+  --color-primary: rgb(2, 25, 48);
+  --color-primary2: rgb(6, 71, 137);
+  --color-secondary: rgb(240, 82, 49);
+  --boxShadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --white: #fff;
+  --transition: all 0.3s linear;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  max-width: 123rem;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+h1 {
+  margin-bottom: 2rem;
+}
+
+body::-webkit-scrollbar {
+  width: 1.4rem;
+  /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--color-primary);
+  /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #d8d8d8;
+  /* color of the scroll thumb */
+  border-radius: 2rem;
+  /* roundness of the scroll thumb */
+  border: 0.3rem solid var(--color-primary);
+  /* creates padding around scroll thumb */
+}
+
+.header {
+  background: var(--color-primary);
+  margin-bottom: 2rem;
+}
+
+.nav {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 2rem 0rem 1rem 0rem;
+}
+
+.nav .nav__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2rem;
+}
+
+.nav .nav__header .logo {
+  max-width: 15rem;
+}
+
+.nav .nav__header .nav__hamburger {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.nav .nav__header .fa-bars {
+  font-size: 3rem;
+  color: var(--white);
+}
+
+.nav .nav__links {
+  height: 0;
+  overflow: hidden;
+  text-align: center;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.nav .nav__links li {
+  padding: 0.5rem;
+}
+
+.nav .nav__links li:not(:last-child) {
+  margin-bottom: 1.2rem;
+}
+
+.nav .show-links {
+  height: 16rem;
+}
+
+.nav .nav__link {
+  color: var(--white);
+  text-decoration: none;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+@media screen and (min-width: 88rem) {
+  .nav .nav__header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: 2rem;
+    padding: 0;
+  }
+  .nav .nav__header .nav__hamburger {
+    display: none;
+  }
+  .nav .nav__links {
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    list-style: none;
+    text-align: center;
+  }
+  .nav .nav__links li {
+    margin-bottom: 0;
+  }
+  .nav .nav__link {
+    margin-right: 1.5rem;
+  }
+  .nav .nav__link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0.3rem;
+    border-radius: 0.3rem;
+    background: var(--color-primary2);
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .nav .nav__link:hover.nav__link::before {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    opacity: 1;
+  }
+}
+
+.news {
+  padding: 4rem 0;
+  border-bottom: 1px solid lightgrey;
+}
+
+.news .news__header {
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+}
+
+.news .news__center {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(29rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
+  grid-gap: 3rem;
+}
+
+.news .news__center .article {
+  -webkit-box-shadow: var(--boxShadow);
+          box-shadow: var(--boxShadow);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.news .news__center .article__header {
+  width: 100%;
+}
+
+.news .news__center .article__img {
+  width: 100%;
+  height: 23rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  padding: 0;
+}
+
+.news .news__center .article__content {
+  padding: 2.5rem;
+}
+
+.news .news__center .article__category {
+  display: inline-block;
+  color: var(--color-primary2);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.news .news__center .article__description {
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.news .news__center .article__heading {
+  cursor: pointer;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.news .news__center .article__heading:hover {
+  color: var(--color-primary2);
+}
+
+.report {
+  text-align: center;
+}
+
+.report__header {
+  margin-bottom: 4rem;
+}
+
+.report__category {
+  display: inline-block;
+  color: var(--color-primary2);
+  margin-bottom: 2rem;
+}
+
+.report__heading {
+  max-width: 50ch;
+  margin: 0 auto;
+  font-size: 2.8rem;
+  margin-bottom: 3rem;
+}
+
+.report__description {
+  font-weight: 400;
+  max-width: 55ch;
+  margin: 0 auto;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.report__author {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.report__center {
+  width: 100%;
+}
+
+.report__img {
+  max-width: 90%;
+  border-radius: 0.2rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.report__text {
+  width: 80%;
+  margin: 0 auto;
+  padding: 3rem;
+  text-align: left;
+}
+
+@media screen and (max-width: 88rem) {
+  .report__text {
+    width: 100%;
+  }
+}
+
+.report__paragraph {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.7;
+  letter-spacing: 0.1rem;
+  text-rendering: optimizeLegibility;
+  margin-bottom: 3rem;
+  white-space: pre-line;
+}
+
+.form-cont {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.form-cont h1 {
+  text-align: center;
+}
+
+.form-cont .form {
+  padding: 3rem 0;
+}
+
+.form-cont .form .form-control {
+  position: relative;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+.form-cont .form label {
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.form-cont .form .inputs {
+  width: 70%;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 1rem;
+  border: 2px solid var(--color-primary);
+  border-radius: 0.4rem;
+}
+
+.form-cont .form input[type="file"] {
+  display: none;
+}
+
+.form-cont .form .img-upload {
+  background: var(--color-primary);
+  color: var(--white);
+  border-radius: 0.5rem;
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  cursor: pointer;
+}
+
+.form-cont .form select {
+  cursor: pointer;
+  width: 20rem;
+  padding: 1rem;
+  background: var(--color-primary);
+  color: var(--white);
+  font-family: inherit;
+  font-size: inherit;
+  border-radius: 0.4rem;
+}
+
+.form-cont .form select option {
+  padding: 0.5rem;
+}
+
+.form-cont .form__btn {
+  cursor: pointer;
+  background: var(--color-primary);
+  color: var(--white);
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 0.4rem;
+}
+
+.form-cont .form__btn:not(:last-child) {
+  margin-right: 2rem;
+}
+
+.administration {
+  padding: 3rem;
+  margin-bottom: 2rem;
+  border: 1px solid lightgray !important;
+}
+
+@media screen and (max-width: 88rem) {
+  .form-cont {
+    width: 100%;
+  }
+  .form-cont .form .form-control .inputs {
+    width: 100%;
+    max-width: 70rem;
+  }
+}
+
+.login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 100vh;
+}
+
+.form-control.success input,
+.form-control.success textarea {
+  border-color: #2ecc71 !important;
+}
+
+.form-control.error input,
+.form-control.error textarea {
+  border-color: #e74c3c !important;
+}
+
+.form-control small {
+  visibility: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.form-control.error small {
+  visibility: visible;
+  color: #e74c3c;
+}
+
+.register {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.footer {
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-top: 3rem;
+  padding: 3rem;
+  background: var(--color-primary);
+  color: #eee;
+  font-size: 1.4rem;
+}
+/*# sourceMappingURL=main.css.map */
